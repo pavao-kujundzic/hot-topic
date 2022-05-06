@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "6e8815ad-73df-4dc1-8347-d916d36e56c1",
+		"name": "rss-hot-topic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "analyse",
+			"item": [
+				{
+					"name": "analasye new",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rssUrls\":[\r\n    \"https://news.google.com/news?cf=all&hl=en&pz=1&ned=us&output=rss\",\r\n    \"https://www.huffpost.com/section/front-page/feed?x=1\",\r\n    \"https://rss.nytimes.com/services/xml/rss/nyt/World.xml\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/analyse/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"analyse",
+								"new"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "frequency",
+			"item": [
+				{
+					"name": "hottest topics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{hot-topic}}/frequency/c59d5c4a-21fb-4ee0-8f0c-d95187322257",
+							"host": [
+								"{{hot-topic}}"
+							],
+							"path": [
+								"frequency",
+								"c59d5c4a-21fb-4ee0-8f0c-d95187322257"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
